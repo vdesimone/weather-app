@@ -5,12 +5,10 @@ function getWeather() {
   if (!city) {
     alert('Please enter a city');
     return;
-  }
+  };
 
-  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/
-  weather?q=${city}&appid=${apiKey}`;
-  const forecastUrl = `https://api.openweathermap.org/data/2.5/
-  forecast?q=${city}&appid=${apiKey}`
+  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
   // DISPLAY WEATHER
   fetch(currentWeatherUrl)
@@ -24,7 +22,7 @@ function getWeather() {
     });
 
   // DISPLAY HOURLY FORECAST
-  fetch(currentWeatherUrl)
+  fetch(forecastUrl)
     .then(response => response.json())
     .then(data => {
       displayHourlyForecast(data.list);
@@ -72,7 +70,7 @@ function displayWeather(data) {
 
 function displayHourlyForecast(hourlyData) {
   const hourlyForecastDiv = document.getElementById('hourly-forecast');
-  const next24Hours = hourlyData.slice(0, 8);
+  const next24Hours = hourlyData;
 
   next24Hours.forEach(item => {
     const dateTime = new Date(item.dt * 1000);
@@ -90,4 +88,9 @@ function displayHourlyForecast(hourlyData) {
     `;
     hourlyForecastDiv.innerHTML += hourlyItemHTML;
   });
-}
+};
+
+function showImage() {
+  const weatherIcon = document.getElementById('weather-icon');
+  weatherIcon.style.display = 'block';
+};

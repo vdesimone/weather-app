@@ -51,7 +51,7 @@ button:hover {
 
 #temp-div p {
   font-size: 60px;
-  margin: -30px;
+  margin-top: -30px;
 }
 
 #weather-info {
@@ -67,7 +67,7 @@ button:hover {
 }
 
 #hourly-forecast {
-  margin-top: 30px;
+  margin-top: 50px;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
