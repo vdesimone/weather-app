@@ -31,7 +31,7 @@ function getWeather() {
       console.error('Error fetching hourly forecast data:', error);
       alert('Error fetching hourly forecast data. Please try again.');
     });
-};
+}
 
 function displayWeather(data) {
   const tempDivInfo = document.getElementById('temp-div');
@@ -66,7 +66,7 @@ function displayWeather(data) {
 
     showImage();
   };
-};
+}
 
 function displayHourlyForecast(hourlyData) {
   const hourlyForecastDiv = document.getElementById('hourly-forecast');
@@ -88,9 +88,9 @@ function displayHourlyForecast(hourlyData) {
     `;
     hourlyForecastDiv.innerHTML += hourlyItemHTML;
   });
-};
+}
 
 function showImage() {
   const weatherIcon = document.getElementById('weather-icon');
   weatherIcon.style.display = 'block';
-};
+}
